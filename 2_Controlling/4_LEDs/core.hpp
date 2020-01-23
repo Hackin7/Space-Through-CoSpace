@@ -1,17 +1,3 @@
-////////////////////////////////////////
-//
-//	File : ai.c
-//	CoSpace Robot
-//	Version 1.0.0
-//	Jan 1 2016
-//	Copyright (C) 2016 CoSpace Robot. All Rights Reserved
-//
-//////////////////////////////////////
-//
-// ONLY C Code can be compiled.
-//
-/////////////////////////////////////
-
 #define CsBot_AI_H//DO NOT delete this line
 #ifndef CSBOT_REAL
 #include <windows.h>
@@ -172,7 +158,3 @@ DLL_EXPORT void OnTimer()
     }
 }
 }
-
-void Game0(){printf("hi1");}
-void Game1(){printf("hi2");}
-
