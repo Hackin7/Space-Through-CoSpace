@@ -89,7 +89,7 @@ class Map{
 			else{return 10;}
 		}
 		if (val == border){
-			return 40;
+			return v/3;//40;
 		}
 		return v;
 	}
@@ -100,17 +100,44 @@ class Map{
 				map[i][j] = mapData[i][j];
 		}
 	}
+
+
+int findValPriority(int val){
+	if (val == unexplored)
+		return 1;
+	if (val == wall)
+		return 2;
+	if (val == unexplored)
+		return 3;
+	if (val == empty)
+		return 4;
+	if (val == red ||
+		val == black ||
+		val == blue||
+		val == deposit)
+		return 5;
+	if (val == slow ||
+		val == border ||
+		val == trap)
+		return 6;
+	return 6;
+}
 	void setPixel(int i, int j, int val){
-		map[i][j] = val;
+	    if (findValPriority(map[i][j]) < findValPriority(val)){
+            map[i][j] = val;
+            visited[i][j] = true;
+        }
+
 	}
 	void rectfill(int x1,int x2,int y1,int y2, int color)
 	{
 		for (int x=x1; x <= x2; x++){
 			for (int y=y1; y<= y2; y++){
-			map[x][y]=color;
-			visited[x][y] = true;
+                setPixel(x,y,color);
+			//visited[x][y] = true;
 			}
 		}
+		//cout<<map[x1][y1]<<"]";
 	}
 
 	void squareFill(int x, int y, int val,int len)

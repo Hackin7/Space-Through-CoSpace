@@ -1,0 +1,15 @@
+processedData = "";
+#cost[1][2] = 3;
+data = input()
+while data != "":
+    command = data.split("]")
+    index1 = str(int(command[0][5:])-1)
+    index2 = str(int(command[1][1:])-1)
+
+    output1=command[0][:5]+index1+"]"+command[1][0]+index2+"]"+command[2]
+    output2=command[0][:5]+index2+"]"+command[1][0]+index1+"]"+command[2]
+
+    processedData+=output1+"\n"
+    processedData+=output2+"\n"
+
+    data = input()

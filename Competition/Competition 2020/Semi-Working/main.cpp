@@ -20,7 +20,8 @@ static constexpr bool ENABLEDEBUG=false;
 #include "World2/AStar/astar.hpp"
 #include "World2/AStar/moveAStar.hpp"
 #include "World2/AStar/cycle.hpp"
-//#include "World2/mapping.hpp"
+#include "World2/AStar/superObj.hpp"
+#include "World2/mapping.hpp"
 
 #include "World2/world2.hpp"
 

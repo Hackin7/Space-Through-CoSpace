@@ -1,0 +1,256 @@
+void tclockwise(int theta) // t stands for trigo
+{
+	if (theta-5<0)
+	{
+		if (Compass>theta-5+360 || Compass<theta+5 )
+		{
+			return;
+		}
+		else if (Compass>theta-10+360 || Compass<theta + 10)
+		{
+			WheelLeft=4;
+      WheelRight=2;
+			return;
+		}
+		else
+		{
+			WheelLeft=5;
+			WheelRight=1;
+		}
+	}
+	else if (theta-10<0)
+	{
+		if (Compass>theta-5+360 && Compass<theta + 5)
+		{
+			return;
+		}
+		else if (Compass>theta-10+360 || Compass<theta + 10 )
+		{
+			WheelLeft=4;
+      WheelRight=2;
+			return;
+		}
+		else
+		{
+			WheelLeft=5;
+			WheelRight=1;
+		}
+	}
+	else
+	{
+		if (Compass>theta-5)
+		{
+			return;
+		}
+		else if (Compass>theta-10)
+		{
+			WheelLeft=4;
+      WheelRight=2;
+			return;
+		}
+		else
+		{
+			WheelLeft=5;
+			WheelRight=1;
+		}
+	}
+}
+
+void taclockwise(int theta)
+{
+	if (theta+5>360)
+	{
+		if (Compass>theta-5 || Compass<theta+5-360 )
+		{
+			return;
+		}
+		else if (Compass>theta-10 || Compass<theta + 10 - 360)
+		{
+			WheelLeft=2;
+      WheelRight=4;
+			return;
+		}
+		else
+		{
+			WheelLeft=1;
+			WheelRight=5;
+		}
+	}
+	else if (theta+10>360)
+	{
+		if (Compass>theta-5 && Compass<theta + 5)
+		{
+			return;
+		}
+		else if (Compass>theta-10 || Compass<theta + 10 - 360)
+		{
+			WheelLeft=2;
+      WheelRight=4;
+			return;
+		}
+		else
+		{
+			WheelLeft=1;
+			WheelRight=5;
+		}
+  }
+	else
+	{
+		if (Compass<theta+5)
+		{
+			return;
+		}
+		else if (Compass<theta+10)
+		{
+			WheelLeft=2;
+      WheelRight=4;
+			return;
+		}
+		else
+		{
+			WheelLeft=1;
+			WheelRight=5;
+		}
+	}
+}
+void clockwise(int theta)
+{
+	if (theta-5<0)
+	{
+		if (Compass>theta-5+360 || Compass<theta+5 )
+		{
+			return;
+		}
+		else if (Compass>theta-10+360 || Compass<theta + 10)
+		{
+			WheelLeft=3;
+      WheelRight=0;
+			return;
+		}
+		else
+		{
+			WheelLeft=5;
+			WheelRight=0;
+		}
+	}
+	else if (theta-10<0)
+	{
+		if (Compass>theta-5 && Compass<theta + 5)
+		{
+			return;
+		}
+		else if (Compass>theta-10+360 || Compass<theta + 10)
+		{
+			WheelLeft=3;
+      WheelRight=0;
+			return;
+		}
+		else
+		{
+			WheelLeft=5;
+			WheelRight=0;
+		}
+  }
+	else
+	{
+		if (Compass>theta-5)
+		{
+			return;
+		}
+		else if (Compass>theta-10)
+		{
+			WheelLeft=3;
+      WheelRight=0;
+			return;
+		}
+		else
+		{
+			WheelLeft=5;
+			WheelRight=0;
+		}
+	}
+}
+
+void aclockwise(int theta)
+{
+	if (theta+5>360)
+	{
+		if (Compass>theta-5 || Compass<theta+5-360 )
+		{
+			return;
+		}
+		else if (Compass>theta-10 || Compass<theta + 10 - 360)
+		{
+			WheelLeft=0;
+      WheelRight=3;
+			return;
+		}
+		else
+		{
+			WheelLeft=0;
+			WheelRight=5;
+		}
+	}
+	else if (theta+10>360)
+	{
+		if (Compass>theta-5 && Compass<theta + 5)
+		{
+			return;
+		}
+		else if (Compass>theta-10 || Compass<theta + 10 - 360)
+		{
+			WheelLeft=0;
+      WheelRight=3;
+			return;
+		}
+		else
+		{
+			WheelLeft=0;
+			WheelRight=5;
+		}
+  }
+	else
+	{
+		if (Compass<theta+5)
+		{
+			return;
+		}
+		else if (Compass<theta+10)
+		{
+			WheelLeft=0;
+      WheelRight=3;
+			return;
+		}
+		else
+		{
+			WheelLeft=0;
+			WheelRight=5;
+		}
+	}
+}
+
+
+
+
+######################################################################################################
+
+######################################################################################################
+
+######################################################################################################
+
+
+bool posInfoLost(){
+    if (PositionX==0 && PositionY==0)
+    {
+			if ((WheelLeft<2 && WheelLeft>-2) || (WheelRight>-2 && WheelRight<2)) // can ignore i guess? since its probably turning
+			{
+				PositionX=tx;
+				PositionY=tx;
+				return;
+			}
+      speed=(WheelLeft+WheelRight)/3.48;
+      tx = speed * cos((Compass+90)%360 * 3.1415926535897932384626433832795 / 180) + tx;
+      ty =speed * sin((Compass+90)%360 * 3.1415926535897932384626433832795 / 180) + ty;
+			PositionX=tx;
+			PositionY=ty;
+    }

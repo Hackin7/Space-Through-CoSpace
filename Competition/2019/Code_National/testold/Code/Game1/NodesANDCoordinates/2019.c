@@ -1,0 +1,38 @@
+#define MAX 7
+int coordinates[MAX][2] = {{50, 220}, {70, 144}, {139, 137}, {155, 225}, {197, 113}, {317, 155}, {296, 177}};
+
+#define DEPOSITNODES 1
+int depositNodes[DEPOSITNODES] = {6};
+
+#define OBJPOINTS 2
+int objectPoints[OBJPOINTS] = {0,4};
+
+#define REDPOINTS 2
+int redNodes[REDPOINTS] = {9,18};
+#define BLUEPOINTS 3
+int blueNodes[BLUEPOINTS] = {32, 43, 29};
+#define BLACKPOINTS 1
+int blackNodes[BLACKPOINTS] = {33};
+
+int cost[MAX][MAX];
+void setCostValues(){
+    for (int i=0;i<MAX;i++){
+        for (int j=0;j<MAX;j++){
+            cost[i][j] = 0;//9999;
+        }
+    }
+
+cost[0][1] = 1;
+cost[1][0] = 1;
+cost[1][2] = 1;
+cost[2][1] = 1;
+cost[2][3] = 1;
+cost[3][2] = 1;
+cost[2][4] = 1;
+cost[4][2] = 1;
+cost[4][5] = 1;
+cost[5][4] = 1;
+cost[5][6] = 1;
+cost[6][5] = 1;
+    }
+
