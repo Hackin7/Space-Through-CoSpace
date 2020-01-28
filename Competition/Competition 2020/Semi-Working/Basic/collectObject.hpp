@@ -116,19 +116,19 @@ bool Deposit(){
 	{
 		//2 color sensors must be in orange
 		if (! colorRightCheck(depositOrange,depRange)){ // Turn Right
-			WheelLeft=0;WheelRight=3;
-			return true;
+			WheelLeft=0;WheelRight=1;
 		}
 		if (! colorLeftCheck(depositOrange,depRange)){ // Turn Left
-			WheelLeft=3;WheelRight=0;
-			return true;
+			WheelLeft=1;WheelRight=0;
 		}
-		WheelLeft=0;WheelRight=0;
-		LED_1 =2;
-		Duration=60;
-		LoadedObjects=0;
-		LoadedPoints = 0;
-		LoadedBlue=0;LoadedRed=0;LoadedBlack=0;LoadedSuperObj=0;
+		if (colorRightCheck(depositOrange,depRange) && colorLeftCheck(depositOrange,depRange)){
+            WheelLeft=0;WheelRight=0;
+            LED_1 =2;
+            Duration=60;
+            LoadedObjects=0;
+            LoadedPoints = 0;
+            LoadedBlue=0;LoadedRed=0;LoadedBlack=0;LoadedSuperObj=0;
+		}
 	}
 	else{return false;}
 	return true;
@@ -241,7 +241,7 @@ int slowarea[3] = {143,151,197};
 int depRange = 35;
 
 int trapYellow[3] = {220,235,20};
-int trapBlue[3] = {0,95,217};
+int trapBlue[3] = {62,111,245};//0,95,217};
 int trapRange=20;
 
 bool collectedRed = false;

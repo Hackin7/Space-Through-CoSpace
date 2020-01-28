@@ -9,18 +9,21 @@ static constexpr bool ENABLEDEBUG=false;
 
 #include "Basic/movement.hpp"
 #include "Basic/collectObject.hpp"
+
+#include "CoordinateSystem/trigo.hpp"
+#include "CoordinateSystem/posInfoLost.hpp"
+#include "World1/w1map.hpp"
+#include "World2/w2map.hpp"
+#include "CoordinateSystem/location.hpp"
+
+#include "Navigation/astar.hpp"
+#include "Navigation/moveAStar.hpp"
+#include "Navigation/cycle.hpp"
+
 #include "World1/world1.hpp"
 
-#include "World2/trigo.hpp"
-#include "World2/posInfoLost.hpp"
-#include "World2/boundary.hpp"
-
-#include "World2/Location/map.hpp"
-#include "World2/Location/location.hpp"
-#include "World2/AStar/astar.hpp"
-#include "World2/AStar/moveAStar.hpp"
-#include "World2/AStar/cycle.hpp"
-#include "World2/AStar/superObj.hpp"
+#include "World2/boundary1.hpp"
+#include "World2/superObj.hpp"
 #include "World2/mapping.hpp"
 
 #include "World2/world2.hpp"
