@@ -1,2 +1,6 @@
 # Space-Through-CoSpace
- A series of CoSpace Tutorials & Sample Code
+ This is a series of CoSpace Tutorials & Sample Code. 
+ Prior knowledge of C and C++ is assumed.
+ 
+ It is advised to start from the tutorials in order
+ 
