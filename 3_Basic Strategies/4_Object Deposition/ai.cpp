@@ -35,7 +35,7 @@ void Game0(){
 		return;
 	}
 	LED_1=0; //Clear any LED State
-	
+
 	//Collecting Red Objects//////////////////////////
 	if (colorCheck(objRed,objRange))	{
 		WheelLeft=0;WheelRight=0;
@@ -51,8 +51,8 @@ void Game0(){
 		WheelLeft=0;WheelRight=0;
 		LED_1 =2;
 		Duration=41;
-		LoadedObjects++;
-		LoadedRed++;
+		LoadedObjects=0;
+		LoadedRed0=;
 		return; //Do not run anything else
 	}
 	//Normal Movement/////////////////////////////////

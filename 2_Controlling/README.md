@@ -1,7 +1,4 @@
-﻿
-# CoSpace Rescue Tutorial
-
-2: Controlling Robot
+﻿# 2: Controlling Robot
 
 We will be using the C++ template code from the previous lessons.
 
@@ -12,7 +9,7 @@ To manipulate the robot you have a whole bunch of variables to work with.
 
 Man that’s a lot. However, we first must know what the robot has.
 
-## Wheels
+## 2.1 Wheels
 
 The robot has 2 wheels for left and right. You access these variables through WheelLeft and WheelRight. They are to be assigned integer values from -5 to 5, 5 is fastest speed forward, -5 is fastest speed backward, 0 is not moving.
 
@@ -30,9 +27,7 @@ Run the code in world 1
 
 ![](https://lh5.googleusercontent.com/OkPSyXCLq-MjdKk8laTGlLyL9ryhBRXHvx88WpytlM4omqC0IMCAvJfV227abxNeRQCj4zDGlhXQoz7dZXItocr_BtPrCCXGt0rsvQo67PuoiW_A8JV1fsmOJMHtdgoeqgwzv7AS)
 
-  
-
-## Turning
+### 2.1.1 Turning
 
 Set one wheel value to be the negative of the other to turn in place
 ```
@@ -40,8 +35,7 @@ void Game0(){
 	WheelLeft = -5;
 	WheelRight = 5;
 }
-```
-  
+``` 
 
 Experiment with whatever values, to find out what kind of movement you want. Turn while moving straight? How to get a smaller degree turn? etc.
 ```
@@ -51,9 +45,7 @@ void Game0(){
 }
 ```
   
-  
-
-# Ultrasonic Sensors
+# 2.2 Ultrasonic Sensors
 
 US_Front, US_Left, US_Right for the front, right & left ultrasonic sensors respectively.
 
@@ -63,7 +55,7 @@ Speaking of which you know this window? You can use it to check your values
 
 Position your robot and you can check your sensor readings
 
-## Wall Avoiding
+### 2.2.1 Wall Avoiding
 
 ```
 void Game0(){
@@ -76,18 +68,18 @@ void Game0(){
 ```
 ![](https://lh3.googleusercontent.com/rG6SdwUdYj11mini0JvluAEcPBNqX4n7QDTv1_49gxgiwzv0Re9j8XjHum4A5zMye7j5qE76txS9WuE8O_kyOD_KaSNOAA-Y2xJEKWl8timhndeaulJHSycNDPNXsxcc53-wInJl)
 
-## Other Applications
+### 2.2.2 Other Applications
 
 1.  How do you avoid a wall at the side?   
 	a.  Hint: If Side Ultrasonic sensors measure a distance less than the acceptable one, turn ?
 2.  When would you turn around completely?
     
 
-# Colour Sensors
+## 2.3 Colour Sensors
 
 The robot has 2 colour sensors on the left and right, accessed by the variables CSLeft_R, CSLeft_G, CSLeft_B and CSRight_R, CSRight_G, CSRight_B.
 
-## Stop when orange
+### 2.3.1 Stop when orange
 What colour is orange? Let’s measure it for ourselves!
 ![](https://lh4.googleusercontent.com/_rt2yxvbX25_raXEcxuK4JFfmvxd63iShlI2BL4WTqHVhhteDn8PihI5C2NVM32CvvJDTW7GNHeocB9WHnY7ufOhDu2iv8LjiHsSdmJA1IWWtflWk_EZ-cd5fGAhZMmImXdq218R)
 
@@ -122,27 +114,27 @@ void Game0(){
 ```
 ![](https://lh5.googleusercontent.com/lFozRIxAUuyOxWnPkKr8c_VT5p0SuO7N84O1Qhp0UJA3wia5mViToFwCX2DrBmMCd0t2WlJwpSMlRZDMVh0fMWJlj-AzELGzZu2uj_FxO_AAgB7hbaio607c8Xe_ITuuiroXlU_F)
 
-## Other Applications
+### 2.3.2 Other Applications
 1.  How would you avoid yellow regions?
 2.  Stay in light blue regions?
 
-# LED
+## 2.4 LED
 LED_1 = 0; for the LED on the robot to be off
 
-LED_1 = 1; for the LED on the robot to blink
+LED_1 = 1; for the LED on the robot to blink (to collect objects)
 
 LED_1 = 2; for the LED on the robot to be constant (to deposit objects)
 
 The usage of this is for the robot to collect & deposit objects around the map. More about this in later tutorials.
 
-# Compass
+## 2.5 Compass
 
 Compass gives the angle that the front of the robot is pointing to in degrees. The top is 0 degrees, and it measures it anticlockwise to 359 degrees.
 
-## Turn to Angle
+### 2.5.1 Turn to Angle
 The Basic Idea is that you can use it to turn to a certain angle to move to. You could read and test the sample code just to test.
 
-# Position (Only for World 2)
+## 2.6 Position (Only for World 2)
 
 Position_X, Position Y. The (0,0) coordinate starts from the bottom left corner
 
@@ -150,8 +142,8 @@ The X-Value goes from 0 to 360, while the Y-Value goes from 0 to 270
 
 You can test the code in the corresponding folder on github to know more about how to get the position coordinates.
 
-# Time Left
-Time variable has the time passed since the game started in seconds. The main reason you want the time left is to teleport to world 2 early, or to plan strategies for collecting other objects
+## 2.7 Time Left
+`Time` variable has the time passed since the game started in seconds. The main reason you want the time left is to teleport to world 2 early, or to plan strategies for collecting other objects
 
 eg.
 `if (Time > 180){Teleport = 1;}`

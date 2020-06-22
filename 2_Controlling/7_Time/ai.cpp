@@ -1,7 +1,6 @@
 #include "core.hpp"
 void Game0(){
-    WheelLeft = 5;
-    WheelRight = 5;
+    if (Time > 180){Teleport = 1;}
 }
 void Game1(){}
 

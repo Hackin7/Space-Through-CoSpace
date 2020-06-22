@@ -1,6 +1,4 @@
-﻿# CoSpace Rescue Tutorial
-
-1: Getting Started
+﻿# 1: Getting Started
 
 CoSpace Rescue is a virtual robot competition, where virtual robots you code in C/C++ compete to get the most points in a virtual simulation.
 
